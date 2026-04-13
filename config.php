@@ -75,7 +75,7 @@ if (!defined('SMS_TRIBUTE_BG_IMAGE')) {
  * Use direct media URLs so deployment does not depend on Git LFS checkout.
  */
 if (!defined('SMS_HERO_VIDEO_PRIMARY')) {
-    define('SMS_HERO_VIDEO_PRIMARY', 'https://cdn.jsdelivr.net/gh/onelinkcards/sms-website-1@main/media/hero-lite.mp4');
+    define('SMS_HERO_VIDEO_PRIMARY', '');
 }
 if (!defined('SMS_HERO_VIDEO_SEQUENCE')) {
     define('SMS_HERO_VIDEO_SEQUENCE', '');
@@ -189,16 +189,16 @@ if (!defined('SMS_PAGE_HERO_CONTACT')) {
     define('SMS_PAGE_HERO_CONTACT', sms_photo_path('image copy 4.png'));
 }
 if (!defined('SMS_PAGE_HERO_COURSES')) {
-    define('SMS_PAGE_HERO_COURSES', sms_photo_path('image copy 2.png'));
+    define('SMS_PAGE_HERO_COURSES', 'assets/images/course/program-big.jpg');
 }
 if (!defined('SMS_PAGE_HERO_ADMISSION')) {
-    define('SMS_PAGE_HERO_ADMISSION', SMS_PAGE_HERO_COURSES);
+    define('SMS_PAGE_HERO_ADMISSION', 'assets/images/course/admission-bg.jpg');
 }
 if (!defined('SMS_PAGE_HERO_ABOUT')) {
     define('SMS_PAGE_HERO_ABOUT', sms_photo_path('image copy 4.png'));
 }
 if (!defined('SMS_PAGE_HERO_GALLERY')) {
-    define('SMS_PAGE_HERO_GALLERY', sms_photo_path('image copy 3.png'));
+    define('SMS_PAGE_HERO_GALLERY', 'assets/images/campus/gallery/03.jpg');
 }
 if (!defined('SMS_STOCK_COURSE_BSC')) {
     define(
@@ -246,7 +246,7 @@ if (!defined('SMS_STOCK_GALLERY_5')) {
     define('SMS_STOCK_GALLERY_5', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=88');
 }
 if (!defined('SMS_STOCK_FAQ_SIDE')) {
-    define('SMS_STOCK_FAQ_SIDE', sms_photo_path('ChatGPT Image Apr 13, 2026, 05_55_42 PM.png'));
+    define('SMS_STOCK_FAQ_SIDE', 'assets/images/about/about-campus-02.jpg');
 }
 
 /**

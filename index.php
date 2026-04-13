@@ -71,9 +71,15 @@ $_sms_hero_video_primary = defined('SMS_HERO_VIDEO_PRIMARY') ? SMS_HERO_VIDEO_PR
 $_sms_hero_video_sequence = defined('SMS_HERO_VIDEO_SEQUENCE') ? SMS_HERO_VIDEO_SEQUENCE : 'assets/video/DJI_0337.MP4,assets/video/DJI_0344.MP4';
 $_sms_enable_hero_video = ($_sms_hero_video_primary !== '');
 $_sms_hero_video_poster = defined('SMS_STOCK_HERO_1') ? SMS_STOCK_HERO_1 : '';
+$_sms_hero_images = array_values(array_unique(array_filter([
+    defined('SMS_PAGE_HERO_COURSES') ? (string) SMS_PAGE_HERO_COURSES : '',
+    defined('SMS_PAGE_HERO_ADMISSION') ? (string) SMS_PAGE_HERO_ADMISSION : '',
+    defined('SMS_PAGE_HERO_GALLERY') ? (string) SMS_PAGE_HERO_GALLERY : '',
+])));
+$_sms_hero_bg = !empty($_sms_hero_images) ? $_sms_hero_images[0] : $_sms_hero_video_poster;
 ?>
 <section class="sms-hero-cu" id="enquiry">
-    <div class="sms-hero-cu__bg sms-hero-cu__bg--hero-photo sms-hero-cu__bg--video" data-sms-hero-root>
+    <div class="sms-hero-cu__bg sms-hero-cu__bg--hero-photo sms-hero-cu__bg--video" data-sms-hero-root<?php echo !empty($_sms_hero_images) ? ' data-sms-hero-images="' . htmlspecialchars(implode('|', $_sms_hero_images), ENT_QUOTES, 'UTF-8') . '"' : ''; ?><?php echo $_sms_hero_bg !== '' ? ' style="background-image:url(\'' . htmlspecialchars($_sms_hero_bg, ENT_QUOTES, 'UTF-8') . '\');"' : ''; ?>>
         <?php if ($_sms_enable_hero_video) : ?>
         <video class="sms-hero-cu__video" autoplay muted playsinline loop preload="none" aria-hidden="true"<?php echo $_sms_hero_video_poster !== '' ? ' poster="' . htmlspecialchars($_sms_hero_video_poster, ENT_QUOTES, 'UTF-8') . '"' : ''; ?><?php echo trim($_sms_hero_video_sequence) !== '' ? ' data-sms-video-sequence="' . htmlspecialchars($_sms_hero_video_sequence, ENT_QUOTES, 'UTF-8') . '"' : ''; ?>>
             <source src="<?php echo htmlspecialchars($_sms_hero_video_primary, ENT_QUOTES, 'UTF-8'); ?>" type="video/mp4">
@@ -108,6 +114,22 @@ $_sms_hero_video_poster = defined('SMS_STOCK_HERO_1') ? SMS_STOCK_HERO_1 : '';
         </div>
     </div>
 </section>
+
+<?php if (count($_sms_hero_images) > 1) : ?>
+<script>
+  (function () {
+    var root = document.querySelector('[data-sms-hero-images]');
+    if (!root) return;
+    var items = (root.getAttribute('data-sms-hero-images') || '').split('|').filter(Boolean);
+    if (items.length < 2) return;
+    var idx = 0;
+    window.setInterval(function () {
+      idx = (idx + 1) % items.length;
+      root.style.backgroundImage = "url('" + items[idx].replace(/'/g, "\\'") + "')";
+    }, 2800);
+  })();
+</script>
+<?php endif; ?>
 
 <?php include_once __DIR__ . '/partials/components/sms-marquee-band.php'; ?>
 
