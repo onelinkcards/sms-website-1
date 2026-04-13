@@ -9,6 +9,7 @@
   },
   "routes": [
     { "src": "/assets/(.*)", "dest": "https://cdn.jsdelivr.net/gh/onelinkcards/sms-websites@main/assets/$1" },
+    { "src": "/photo/SMS_VIDEO_WITHAUDIO_F1\\.mp4", "dest": "https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/photo/SMS_VIDEO_WITHAUDIO_F1.mp4" },
     { "src": "/photo/(.*)", "dest": "https://cdn.jsdelivr.net/gh/onelinkcards/sms-websites@main/photo/$1" },
     { "src": "/", "dest": "/api/router.php" },
     { "src": "/[^/]+\\.php", "dest": "/api/router.php" },

@@ -81,7 +81,7 @@ if (!defined('SMS_HERO_VIDEO_SEQUENCE')) {
     define('SMS_HERO_VIDEO_SEQUENCE', '');
 }
 if (!defined('SMS_CAMPUS_VIDEO_MP4')) {
-    define('SMS_CAMPUS_VIDEO_MP4', 'https://cdn.jsdelivr.net/gh/onelinkcards/sms-websites@main/photo/SMS_VIDEO_WITHAUDIO_F1.mp4');
+    define('SMS_CAMPUS_VIDEO_MP4', 'https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/photo/SMS_VIDEO_WITHAUDIO_F1.mp4');
 }
 if (!defined('SMS_PHOTO_BASE_URL')) {
     define('SMS_PHOTO_BASE_URL', 'https://cdn.jsdelivr.net/gh/onelinkcards/sms-websites@main/photo/');
