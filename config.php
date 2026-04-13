@@ -246,7 +246,7 @@ if (!defined('SMS_STOCK_GALLERY_5')) {
     define('SMS_STOCK_GALLERY_5', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=88');
 }
 if (!defined('SMS_STOCK_FAQ_SIDE')) {
-    define('SMS_STOCK_FAQ_SIDE', 'assets/images/about/about-campus-02.jpg');
+    define('SMS_STOCK_FAQ_SIDE', 'https://cdn.jsdelivr.net/gh/onelinkcards/sms-website-1@dd43d8e/photo/ChatGPT%20Image%20Apr%2013%2C%202026%2C%2005_55_42%20PM.png');
 }
 
 /**

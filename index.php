@@ -71,12 +71,16 @@ $_sms_hero_video_primary = defined('SMS_HERO_VIDEO_PRIMARY') ? SMS_HERO_VIDEO_PR
 $_sms_hero_video_sequence = defined('SMS_HERO_VIDEO_SEQUENCE') ? SMS_HERO_VIDEO_SEQUENCE : 'assets/video/DJI_0337.MP4,assets/video/DJI_0344.MP4';
 $_sms_enable_hero_video = ($_sms_hero_video_primary !== '');
 $_sms_hero_video_poster = defined('SMS_STOCK_HERO_1') ? SMS_STOCK_HERO_1 : '';
-$_sms_hero_images = array_values(array_unique(array_filter([
+$_sms_hero_images = array_values(array_filter([
     defined('SMS_PAGE_HERO_COURSES') ? (string) SMS_PAGE_HERO_COURSES : '',
     defined('SMS_PAGE_HERO_ADMISSION') ? (string) SMS_PAGE_HERO_ADMISSION : '',
     defined('SMS_PAGE_HERO_GALLERY') ? (string) SMS_PAGE_HERO_GALLERY : '',
-])));
+]));
 $_sms_hero_bg = !empty($_sms_hero_images) ? $_sms_hero_images[0] : $_sms_hero_video_poster;
+if (!empty($_sms_hero_images)) {
+    // Keep hero strictly image-based when slideshow images are available.
+    $_sms_enable_hero_video = false;
+}
 ?>
 <section class="sms-hero-cu" id="enquiry">
     <div class="sms-hero-cu__bg sms-hero-cu__bg--hero-photo sms-hero-cu__bg--video" data-sms-hero-root<?php echo !empty($_sms_hero_images) ? ' data-sms-hero-images="' . htmlspecialchars(implode('|', $_sms_hero_images), ENT_QUOTES, 'UTF-8') . '"' : ''; ?><?php echo $_sms_hero_bg !== '' ? ' style="background-image:url(\'' . htmlspecialchars($_sms_hero_bg, ENT_QUOTES, 'UTF-8') . '\');"' : ''; ?>>
@@ -126,7 +130,7 @@ $_sms_hero_bg = !empty($_sms_hero_images) ? $_sms_hero_images[0] : $_sms_hero_vi
     window.setInterval(function () {
       idx = (idx + 1) % items.length;
       root.style.backgroundImage = "url('" + items[idx].replace(/'/g, "\\'") + "')";
-    }, 2800);
+    }, 3000);
   })();
 </script>
 <?php endif; ?>
