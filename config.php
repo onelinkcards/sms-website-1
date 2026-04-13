@@ -86,6 +86,9 @@ if (!defined('SMS_HERO_VIDEO_SEQUENCE')) {
 if (!defined('SMS_CAMPUS_VIDEO_MP4')) {
     define('SMS_CAMPUS_VIDEO_MP4', 'https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/photo/SMS_VIDEO_WITHAUDIO_F1.mp4');
 }
+if (!defined('SMS_PHOTO_BASE_URL')) {
+    define('SMS_PHOTO_BASE_URL', 'https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/photo/');
+}
 
 /** Enquiry form: notification inbox — defaults to college email when defined */
 if (!defined('SMS_ENQUIRY_NOTIFY_EMAIL')) {
@@ -118,10 +121,11 @@ function sms_enquiry_session_start(): void
     }
 }
 
-/** Local file under /photo/ (URL-safe). */
+/** Hosted file under the configured photo base (URL-safe). */
 function sms_photo_path(string $file): string
 {
-    return 'photo/' . rawurlencode($file);
+    $base = defined('SMS_PHOTO_BASE_URL') ? (string) SMS_PHOTO_BASE_URL : 'photo/';
+    return rtrim($base, '/') . '/' . rawurlencode($file);
 }
 
 /**
@@ -202,31 +206,31 @@ if (!defined('SMS_PAGE_HERO_GALLERY')) {
 if (!defined('SMS_STOCK_COURSE_BSC')) {
     define(
         'SMS_STOCK_COURSE_BSC',
-        'photo/' . rawurlencode('ChatGPT Image Apr 13, 2026, 02_58_29 AM.png')
+        sms_photo_path('ChatGPT Image Apr 13, 2026, 02_58_29 AM.png')
     );
 }
 if (!defined('SMS_STOCK_COURSE_GNM')) {
     define(
         'SMS_STOCK_COURSE_GNM',
-        'photo/' . rawurlencode('ChatGPT Image Apr 13, 2026, 02_49_26 AM.png')
+        sms_photo_path('ChatGPT Image Apr 13, 2026, 02_49_26 AM.png')
     );
 }
 if (!defined('SMS_STOCK_CLINICAL_A')) {
     define(
         'SMS_STOCK_CLINICAL_A',
-        'photo/' . rawurlencode('ChatGPT Image Apr 13, 2026, 03_15_31 AM.png')
+        sms_photo_path('ChatGPT Image Apr 13, 2026, 03_15_31 AM.png')
     );
 }
 if (!defined('SMS_STOCK_CLINICAL_B')) {
     define(
         'SMS_STOCK_CLINICAL_B',
-        'photo/' . rawurlencode('ChatGPT Image Apr 13, 2026, 03_27_08 AM.png')
+        sms_photo_path('ChatGPT Image Apr 13, 2026, 03_27_08 AM.png')
     );
 }
 if (!defined('SMS_STOCK_CLINICAL_C')) {
     define(
         'SMS_STOCK_CLINICAL_C',
-        'photo/' . rawurlencode('ChatGPT Image Apr 13, 2026, 03_28_55 AM.png')
+        sms_photo_path('ChatGPT Image Apr 13, 2026, 03_28_55 AM.png')
     );
 }
 if (!defined('SMS_STOCK_GALLERY_1')) {

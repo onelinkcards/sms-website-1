@@ -35,8 +35,8 @@ $_hs_email_display = $_hs_email !== '' ? $_hs_email : 'sms.conaps@gmail.com';
 $_hs_addr_display = $_hs_address_full !== '' ? $_hs_address_full : 'Babliana Jeevan Nagar Road, Near Airport, Jammu — 180001, J&K';
 $_hs_tel_for_href = $_hs_tel !== '' ? $_hs_tel : ($_hs_tel2 !== '' ? $_hs_tel2 : '9149585221');
 $_hs_cta_phone_note = $_hs_phone !== '' ? $_hs_phone : ($_hs_phone2 !== '' ? $_hs_phone2 : '9149585221');
-$_hs_campus_mp4 = defined('SMS_CAMPUS_VIDEO_MP4') ? SMS_CAMPUS_VIDEO_MP4 : ('photo/' . rawurlencode('SMS_VIDEO_WITHAUDIO_F1.mp4'));
-$_hs_campus_poster = 'photo/' . rawurlencode('IMG_0429.jpg');
+$_hs_campus_mp4 = defined('SMS_CAMPUS_VIDEO_MP4') ? SMS_CAMPUS_VIDEO_MP4 : (function_exists('sms_photo_path') ? sms_photo_path('SMS_VIDEO_WITHAUDIO_F1.mp4') : ('photo/' . rawurlencode('SMS_VIDEO_WITHAUDIO_F1.mp4')));
+$_hs_campus_poster = function_exists('sms_photo_path') ? sms_photo_path('IMG_0429.jpg') : ('photo/' . rawurlencode('IMG_0429.jpg'));
 
 ?>
 
@@ -341,7 +341,7 @@ $_hs_campus_poster = 'photo/' . rawurlencode('IMG_0429.jpg');
     <?php
     $_hs_gal_base = 'assets/images/gallery/';
     $_hs_gal_photo = static function (string $file): string {
-        return 'photo/' . rawurlencode($file);
+        return function_exists('sms_photo_path') ? sms_photo_path($file) : ('photo/' . rawurlencode($file));
     };
     $_hs_gal_slides_base = [
         ['url' => $_hs_gal_photo('IMG_0432.jpg'), 'alt' => '', 'tall' => false],

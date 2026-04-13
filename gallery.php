@@ -10,7 +10,7 @@ $_g_contact = defined('SMS_CONTACT_URL') ? SMS_CONTACT_URL : 'contact.php';
 $_g_courses = defined('SMS_COURSES_URL') ? SMS_COURSES_URL : 'courses.php';
 $_g_short = defined('SMS_SITE_SHORT') ? SMS_SITE_SHORT : 'SMS College';
 $_g_photo = static function (string $file): string {
-    return 'photo/' . rawurlencode($file);
+    return function_exists('sms_photo_path') ? sms_photo_path($file) : ('photo/' . rawurlencode($file));
 };
 $_g_mosaic = function_exists('sms_gallery_mosaic_files') ? sms_gallery_mosaic_files() : [];
 ob_start();
