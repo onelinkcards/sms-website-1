@@ -1,0 +1,23 @@
+/**
+ * After tribute “Enter Website”: one gentle page reveal — no second white layer,
+ * no logo flight (avoids reload / double-animation blink).
+ */
+@keyframes smsHomeSoftIn {
+  from {
+    opacity: 0.88;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+body.sms-home--soft-enter {
+  animation: smsHomeSoftIn 0.78s cubic-bezier(0.2, 0.85, 0.32, 1) 0.02s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.sms-home--soft-enter {
+    animation: none;
+  }
+}

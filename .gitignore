@@ -1,0 +1,26 @@
+# Vercel
+.vercel
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Logs & local storage
+*.log
+storage/*.log
+!storage/.gitignore
+/WhatsApp*.jpeg
+
+# Local-only large videos (excluded from git; app uses deploy-safe hosted URLs from config.php)
+assets/video/DJI_0323.MP4
+assets/video/DJI_0337.MP4
+assets/video/DJI_0344.MP4
+photo/SMS_VIDEO_WITHAUDIO_F1.mp4

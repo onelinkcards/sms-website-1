@@ -1,0 +1,253 @@
+/* ======= Program Area CSS ======= */
+.program__single--item{
+    padding: 60px;
+    @include mq($lg){
+        padding: 38px;
+    }
+    position: relative;
+    z-index: 1;
+    & *{
+        position: relative;
+    }
+    &::before{
+        position: absolute;
+        inset: 0;
+        content: '';
+        background: #f6f6f6;
+        transition: var(--transition);
+    }
+    &:hover{
+        &::before{
+            opacity: 0;
+        }
+        .program__single--item{
+            &--title{
+                color: var(--rt-white);
+            }
+            &--list--item{
+                .link__list{
+                    color: var(--rt-white);
+                    border-color: var(--rt-white);
+                    &:hover{
+                        border-color: var(--rt-primary-1);
+                    }
+                }
+            }
+        }
+    }
+
+    &--bg{
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        z-index: -1;
+        &::before{
+            position: absolute;
+            inset: 0;
+            content: '';
+            background: rgba(0,0,0, 0.7);
+            z-index: 1;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+    }
+    &.v__2{
+        &::before{
+            position: absolute;
+            inset: 0;
+            content: '';
+            background: var(--rt-primary-2);
+            transition: var(--transition);
+        }
+        .program__single--item{
+            &--title{
+                color: var(--rt-white);
+            }
+            &--list--item{
+                .link__list{
+                    color: var(--rt-white);
+                    border-color: var(--rt-white);
+                }
+            }
+        }
+    }
+    &--title{
+        font-size: 32px;
+        margin-bottom: 25px;
+        text-transform: capitalize;
+    }
+    &--list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+            flex-direction: column;
+            gap: 10px;
+        &--item{
+            margin: 0 0;
+            .link__list{
+                padding: 11px 20px;
+                border: 1px solid var(--rt-heading);
+                display: inline-flex;
+                color: var(--rt-heading);
+                gap: 10px;
+                transition: var(--transition);
+                &:hover{
+                    background: var(--rt-primary-1);
+                    color: var(--rt-white);
+                    border-color: var(--rt-primary-1);
+                }
+            }
+        }
+    }
+    
+}
+
+
+// single resource
+.program__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 30px;
+    li{
+        color: #000000;
+        display: flex;
+        gap: 6px;
+    }
+}
+.resource__plan{
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
+.single__resource__plan{
+    padding: 50px 40px;
+    background-color: transparent;
+    border: 1px solid rgba($color: #AB0101, $alpha: 0.15);
+    border-radius: 10px;
+    position: relative;
+    transition: var(--transition);
+    height: 100%;
+    .plan__name{
+        padding: 10px 15px;
+        border-radius: 6px;
+        border: 1px solid rgba($color: #AB0101, $alpha: 0.15);
+        color: var(--primary-color);
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 100%;
+        margin-bottom: 30px;
+        transition: var(--transition);
+    }
+    .plan__price{
+        .price{
+            color: #0C1018;
+            font-family: var(--font-primary);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 5px;
+            span{
+                font-size: 16px;
+                color: rgba($color: #000000, $alpha: 0.4);
+            }
+        }
+        span{
+            font-size: 14px;
+            color: rgba($color: #000000, $alpha: 0.4);
+        }
+    }
+    .plan__icon{
+        height: 60px;
+        width: 60px;
+        border-radius: 50px;
+        display: grid;
+        place-items: center;
+        background: rgba($color: #AB0101, $alpha: 0.15);
+        position: absolute;
+        right: 40px;
+        top: 50px;
+        transition: var(--transition);
+        img{
+            height: 24px;
+            width: 24px;
+        }
+    }
+    .purchase__plan{
+        margin-top: 25px;
+        margin-bottom: 30px;
+        padding: 16px 15px;
+        text-align: center;
+        border-radius: 6px;
+        border: 1px solid var(--primary-color);
+        font-weight: 600;
+        color: var(--primary-color);
+        line-height: 100%;
+        transition: var(--transition);
+    }
+
+    .plan__content{
+        h6{
+            font-weight: 600;
+            color: #0C1018;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            list-style: none;
+            li{
+                display: flex;
+                gap: 10px;
+                color: #0C1018;
+                margin: 0;
+                i{
+                    color: var(--primary-color);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    &:hover{
+        background: #FFEFEF;
+        .plan__icon{
+            background: var(--rt-white);
+        }
+        .plan__name{
+            color: var(--primary-color);
+            background: var(--rt-white);
+        }
+        .purchase__plan{
+            background: var(--primary-color);
+            color: var(--rt-white);
+        }
+    }
+}
+
+.sc__accordion{
+    .faq__title{
+        font-size: 40px;
+        font-weight: 600;
+        color: #0C1018;
+        margin-bottom: 50px;
+        line-height: 50px;
+    }
+    &.single__resource{
+        .program-accordion{
+            margin-bottom: 0;
+            .accordion .accordion-item{
+                border-color: var(--primary-color) !important;
+                .accordion-button{
+                    border-color: none !important;
+
+                }
+            }
+        }
+    }
+}

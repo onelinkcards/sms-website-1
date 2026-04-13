@@ -1,0 +1,331 @@
+/**
+ * Contact page body — quick strip + map + form.
+ * Scoped: body.sms-contact-page (navbar / hero / footer unchanged).
+ */
+
+/* Floating UI that can overlap footer — remove on contact */
+body.sms-contact-page .sms-help-dock,
+body.sms-contact-page .sms-enquiry-sticky,
+body.sms-contact-page .sms-enquiry-sheet {
+  display: none !important;
+}
+
+/* ========== Section 1 — Quick contact strip ========== */
+.sms-contact-body__strip {
+  background: #f9f7f5;
+  border-bottom: 1px solid #e8e0d8;
+  padding: 0;
+}
+
+.sms-contact-body__strip-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--container-gutter, clamp(16px, 4vw, 56px));
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.sms-contact-body__strip-item {
+  padding: 22px 28px;
+  border-right: 1px solid #e8e0d8;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 80px;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+a.sms-contact-body__strip-item {
+  color: inherit;
+}
+
+a.sms-contact-body__strip-item:hover {
+  color: inherit;
+}
+
+/* Stable row: icon + label/value column (fixes nested <a> / grid bugs) */
+.sms-contact-body__strip-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}
+
+.sms-contact-body__strip-item:last-child {
+  border-right: none;
+}
+
+.sms-contact-body__strip-item--static {
+  cursor: default;
+}
+
+a.sms-contact-body__strip-item:hover .sms-contact-body__strip-value {
+  color: #8b1a1a;
+}
+
+.sms-contact-body__strip-ico {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #fff0f0;
+  border: 1px solid #f0cccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b1a1a;
+}
+
+.sms-contact-body__strip-ico svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.sms-contact-body__strip-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.sms-contact-body__strip-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #8b1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.sms-contact-body__strip-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d0d0d;
+  line-height: 1.4;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Phone numbers: one line; tel links must stay inline (no nested <a> on row) */
+.sms-contact-body__strip-value--phone {
+  display: block;
+  white-space: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.sms-contact-body__strip-sep {
+  display: inline;
+  font-weight: 600;
+  color: #0d0d0d;
+}
+
+.sms-contact-body__strip-value a {
+  display: inline !important;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sms-contact-body__strip-value a:hover {
+  color: #8b1a1a;
+}
+
+.sms-contact-body__strip-value--muted {
+  color: #888 !important;
+  font-weight: 500 !important;
+}
+
+@media (max-width: 767px) {
+  .sms-contact-body__strip-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .sms-contact-body__strip-item {
+    padding: 18px 20px;
+    min-height: 0;
+    border-right: none;
+    border-bottom: 1px solid #e8e0d8;
+  }
+
+  .sms-contact-body__strip-item:last-child {
+    border-bottom: none;
+  }
+
+  .sms-contact-body__strip-value--phone {
+    white-space: normal;
+    overflow-x: visible;
+  }
+
+  .sms-contact-body__strip-value--phone a {
+    white-space: normal;
+  }
+}
+
+/* ========== Section 2 — Map + form ========== */
+.sms-contact-body__main {
+  background: #ffffff;
+  padding: 64px 0;
+}
+
+.sms-contact-body__main-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--container-gutter, clamp(16px, 4vw, 56px));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+.sms-contact-body__map-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.sms-contact-body__map-frame {
+  width: 100%;
+  height: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  background: #e8e4df;
+}
+
+.sms-contact-body__map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.sms-contact-body__map-caption {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #777;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  line-height: 1.45;
+}
+
+.sms-contact-body__hours-card {
+  margin-top: 20px;
+  background: #f9f7f5;
+  border: 0.5px solid #e8e0d8;
+  border-radius: 10px;
+  padding: 18px 20px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.sms-contact-body__hours-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #8b1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 10px;
+}
+
+.sms-contact-body__hours-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #3d3d3d;
+  margin: 0 0 8px;
+}
+
+.sms-contact-body__hours-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.sms-contact-body__hours-row--muted {
+  color: #999;
+}
+
+.sms-contact-body__hours-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.sms-contact-body__hours-dot--red {
+  background: #8b1a1a;
+}
+
+.sms-contact-body__hours-dot--grey {
+  background: #bbb;
+}
+
+.sms-contact-body__directions {
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #8b1a1a;
+  text-decoration: none;
+  align-self: flex-start;
+  border-bottom: 1.5px solid rgba(139, 26, 26, 0.25);
+  padding-bottom: 2px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  transition: border-color 0.15s ease;
+}
+
+.sms-contact-body__directions:hover {
+  border-bottom-color: #8b1a1a;
+  color: #8b1a1a;
+}
+
+/* —— Form card —— */
+.sms-contact-body__form-col {
+  min-width: 0;
+}
+
+/* Enquiry card — same chrome as homepage (.sms-hero-cu__card); theme handles form fields */
+.sms-contact-body__form-card.sms-hero-cu__card {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 767px) {
+  .sms-contact-body__main {
+    padding: clamp(32px, 5vw, 56px) 0;
+  }
+
+  .sms-contact-body__main-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sms-contact-body__map-frame {
+    height: 220px;
+  }
+
+  .sms-contact-body__form-card {
+    padding: 20px 18px;
+  }
+
+}

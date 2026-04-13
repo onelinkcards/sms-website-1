@@ -1,0 +1,472 @@
+/**
+ * Inner pages — Contact, Admission, About (simple layouts, typography, imagery)
+ */
+
+/* ========== Contact (clean) ========== */
+.sms-contact-pro {
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(48px, 6vw, 80px);
+}
+
+.sms-contact-pro__head {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto clamp(28px, 4vw, 40px);
+}
+
+.sms-contact-pro__head .eyebrow {
+  justify-content: center;
+}
+
+.sms-contact-pro__title {
+  margin: 0 0 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0d0d0d;
+  line-height: 1.2;
+}
+
+.sms-contact-pro__lead {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.72;
+  color: var(--t-body, #3d3d3d);
+}
+
+.sms-contact-pro__channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.sms-contact-pro__channel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(16px, 2.5vw, 22px) 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  background: #fafafa;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.sms-contact-pro__channel:hover {
+  border-color: rgba(45, 45, 45, 0.18);
+  background: #fff;
+  box-shadow: var(--shadow-sm, 0 2px 12px rgba(0, 0, 0, 0.06));
+}
+
+.sms-contact-pro__channel-ico {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.sms-contact-pro__channel-ico svg {
+  display: block;
+}
+
+.sms-contact-pro__channel-label {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.sms-contact-pro__channel-value {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.sms-contact-pro__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(24px, 3vw, 40px);
+  align-items: start;
+}
+
+.sms-contact-pro__card {
+  padding: clamp(22px, 3vw, 30px);
+  border-radius: 14px;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.sms-contact-pro__card-title {
+  margin: 0 0 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #0d0d0d;
+  letter-spacing: -0.02em;
+}
+
+.sms-contact-pro__form-lead {
+  margin: 0 0 18px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.sms-contact-pro__map {
+  position: sticky;
+  top: 96px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  aspect-ratio: 4 / 3;
+  min-height: 280px;
+}
+
+.sms-contact-pro__map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  border: 0;
+  display: block;
+}
+
+.sms-contact-pro__map-caption {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+.sms-contact-pro__hours {
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid #ebebeb;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #5c5c5c;
+}
+
+.sms-contact-pro__bottom {
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.sms-contact-pro__bottom-inner {
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.sms-contact-pro__bottom-text {
+  margin: 0 0 18px;
+  font-size: 15px;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+@media (max-width: 991px) {
+  .sms-contact-pro__channels {
+    grid-template-columns: 1fr;
+  }
+
+  .sms-contact-pro__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sms-contact-pro__map {
+    position: relative;
+    top: auto;
+    order: -1;
+  }
+}
+
+@media (max-width: 575px) {
+  .sms-contact-pro__channel {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .sms-contact-pro__channel-ico {
+    margin-bottom: 0;
+  }
+
+  .sms-contact-pro__channel-copy {
+    text-align: left;
+  }
+}
+
+/* ========== Admission ========== */
+.sms-admission-pro {
+  padding-top: clamp(36px, 5vw, 56px);
+  padding-bottom: clamp(56px, 7vw, 88px);
+}
+
+.sms-admission-pro__intro {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto clamp(32px, 4vw, 48px);
+}
+
+.sms-admission-pro__intro .eyebrow {
+  justify-content: center;
+}
+
+.sms-admission-pro__kicker {
+  margin: 0 0 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.sms-admission-pro__title {
+  margin: 0 0 14px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0d0d0d;
+  line-height: 1.2;
+}
+
+.sms-admission-pro__lead {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.72;
+  color: var(--t-body, #3d3d3d);
+}
+
+.sms-admission-pro__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  gap: clamp(28px, 4vw, 40px);
+  align-items: start;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.sms-admission-pro__form-shell {
+  border-radius: 14px;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.07);
+  background: #fff;
+  padding: clamp(22px, 3vw, 32px);
+}
+
+.sms-admission-pro__form-shell .sms-admission-form__section-title {
+  margin: 0 0 18px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0d0d0d;
+}
+
+.sms-admission-aside-pro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sms-admission-aside-pro__block {
+  padding: 20px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  background: #fafafa;
+}
+
+.sms-admission-aside-pro__title {
+  margin: 0 0 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sms-admission-aside-pro__text {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #555;
+}
+
+.sms-admission-aside-pro__link {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2937 !important;
+  text-decoration: none !important;
+}
+
+.sms-admission-aside-pro__link:hover {
+  color: #1e4976 !important;
+  text-decoration: underline !important;
+}
+
+.sms-admission-aside-pro__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sms-admission-aside-pro__list li {
+  margin-bottom: 8px;
+}
+
+.sms-admission-aside-pro__list a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a !important;
+  text-decoration: none !important;
+}
+
+.sms-admission-aside-pro__list a:hover {
+  color: #1e4976 !important;
+}
+
+/* Inner / course pages: outline buttons = neutral frame (red reserved for primary only) */
+body.page.sms-inner .sms-btn.sms-btn--outline:not(.sms-btn--outline-white),
+body.page.sms-course .sms-btn.sms-btn--outline:not(.sms-btn--outline-white) {
+  color: #1f2937 !important;
+  border-color: rgba(31, 41, 55, 0.35) !important;
+}
+body.page.sms-inner .sms-btn.sms-btn--outline:not(.sms-btn--outline-white):hover,
+body.page.sms-course .sms-btn.sms-btn--outline:not(.sms-btn--outline-white):hover {
+  background: #1f2937 !important;
+  color: #ffffff !important;
+  border-color: #1f2937 !important;
+}
+
+@media (max-width: 991px) {
+  .sms-admission-pro__layout {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .sms-admission-aside-pro {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sms-admission-aside-pro__block {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  .sms-admission-aside-pro__block {
+    flex: 1 1 100%;
+  }
+}
+
+/* ========== About page ========== */
+.sms-about-pro-page__intro {
+  max-width: 46rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sms-about-pro-page__intro .eyebrow {
+  justify-content: center;
+}
+
+.sms-about-pro-page__lead {
+  margin-top: 0;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.7;
+  color: #3d3d3d;
+}
+
+.sms-about-pro-page__actions {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.sms-about-pro-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 48px);
+  align-items: center;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.sms-about-pro-split__media {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  max-height: 520px;
+  background: #1a1a1a;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.sms-about-pro-split__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.sms-about-pro-split__body .section-heading {
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  margin-bottom: 12px;
+}
+
+.sms-about-pro-split__body .section-subtext {
+  font-size: clamp(15px, 1.05vw, 16px);
+  line-height: 1.7;
+  color: #454545;
+}
+
+.sms-about-pro-glance {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto 2.5rem;
+}
+
+.sms-about-pro-glance .eyebrow {
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .sms-about-pro-split {
+    grid-template-columns: 1fr;
+  }
+
+  .sms-about-pro-split__media {
+    aspect-ratio: 16 / 10;
+    max-height: none;
+  }
+}

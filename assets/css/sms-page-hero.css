@@ -1,0 +1,343 @@
+/**
+ * Inner pages — image hero: campus photo, neutral dark overlay, Plus Jakarta (same as site body).
+ */
+
+.sms-page-hero {
+  position: relative;
+  width: 100%;
+  min-height: clamp(220px, 38vw, 360px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.sms-page-hero__media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #0f172a;
+  transform: scale(1.06);
+  transform-origin: center center;
+  animation: sms-page-hero-media-in 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes sms-page-hero-media-in {
+  to {
+    transform: scale(1);
+  }
+}
+
+.sms-page-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    rgba(15, 23, 42, 0.88) 0%,
+    rgba(30, 41, 59, 0.62) 45%,
+    rgba(15, 23, 42, 0.48) 100%
+  );
+}
+
+.sms-page-hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: clamp(72px, 14vw, 120px);
+  padding-bottom: clamp(36px, 6vw, 56px);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: sms-page-hero-content-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+
+@keyframes sms-page-hero-content-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sms-page-hero__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 10px;
+  margin: 0 0 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.sms-page-hero__crumbs a {
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
+}
+
+.sms-page-hero__crumbs a:hover {
+  opacity: 0.85;
+  text-decoration: underline !important;
+}
+
+.sms-page-hero__crumb-sep {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+  user-select: none;
+}
+
+.sms-page-hero__crumb-current {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sms-page-hero__title {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(1.75rem, 4.8vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 767px) {
+  .sms-page-hero {
+    min-height: clamp(190px, 48vw, 280px);
+  }
+  .sms-page-hero__inner {
+    padding-top: 44px;
+    padding-bottom: 26px;
+  }
+  .sms-page-hero__crumbs {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .sms-page-hero__title {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
+  }
+  /* Standalone Gallery page */
+  body.page.sms-gallery .sms-gallery-section {
+    overflow-x: hidden;
+  }
+  body.page.sms-gallery .sms-gallery-section__intro {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  body.page.sms-gallery .sms-gallery-grid {
+    gap: 12px;
+  }
+  body.page.sms-gallery .sms-gallery-card {
+    min-height: 200px;
+    border-radius: 12px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body.page.sms-gallery .sms-gallery-card:active {
+    transform: scale(0.99);
+  }
+  body.page.sms-gallery .sms-gallery-card__label {
+    font-size: 15px;
+    padding: 16px 14px 14px;
+  }
+  body.page.sms-gallery .sms-gallery-section__cta {
+    margin-top: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sms-page-hero__crumbs a {
+    transition: none;
+  }
+  .sms-page-hero__media {
+    animation: none;
+    transform: none;
+  }
+  .sms-page-hero__inner {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ——— Homepage: hero outline CTA reads white on photo ——— */
+body.page.sms-home .sms-hero-cu__actions .sms-hero-cu__btn--outline {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(4px);
+}
+body.page.sms-home .sms-hero-cu__actions .sms-hero-cu__btn--outline:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* ——— Homepage: slideshow mode (background from slides, not CSS on bar) ——— */
+.sms-hero-cu__bg--slideshow {
+  background-image: none !important;
+  background-color: #0c1829;
+  position: relative;
+}
+.sms-hero-cu__bg--slideshow > .sms-hero-cu__slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+/* Keep copy above dots; dots sit just above bottom safe area */
+body.page.sms-home .sms-hero-cu__bg--slideshow .sms-hero-cu__inner {
+  z-index: 5;
+}
+body.page.sms-home .sms-hero-cu__bg--slideshow .sms-hero-cu__slide-dots {
+  z-index: 4;
+}
+
+/* Inner pages: form / content below shared hero */
+body.page.sms-admission .sms-admission-page {
+  padding-top: 32px;
+}
+@media (max-width: 767px) {
+  body.page.sms-admission .sms-admission-page {
+    padding-top: 24px;
+  }
+}
+
+/* ——— Gallery grid (redesign) ——— */
+.sms-gallery-section__intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.sms-gallery-section__intro .eyebrow {
+  justify-content: center;
+}
+.sms-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(14px, 2vw, 22px);
+}
+.sms-gallery-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none !important;
+  color: inherit;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.sms-gallery-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 22, 40, 0.82) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+.sms-gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+}
+.sms-gallery-card__label {
+  position: relative;
+  z-index: 1;
+  padding: 20px 18px 18px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff !important;
+  letter-spacing: -0.01em;
+  width: 100%;
+}
+.sms-gallery-card--wide {
+  grid-column: span 8;
+  min-height: 280px;
+}
+.sms-gallery-card--tall {
+  grid-column: span 4;
+  min-height: 320px;
+}
+.sms-gallery-card--sq {
+  grid-column: span 4;
+  min-height: 240px;
+}
+@media (max-width: 991px) {
+  .sms-gallery-card--wide,
+  .sms-gallery-card--tall,
+  .sms-gallery-card--sq {
+    grid-column: span 6;
+    min-height: 220px;
+  }
+}
+@media (max-width: 575px) {
+  .sms-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .sms-gallery-card--wide,
+  .sms-gallery-card--tall,
+  .sms-gallery-card--sq {
+    grid-column: span 1;
+    min-height: 200px;
+  }
+}
+.sms-gallery-section__cta {
+  margin-top: 48px;
+  padding-top: 8px;
+}
+
+.sms-gallery-grid--mosaic {
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 2vw, 18px);
+  margin-bottom: 8px;
+}
+.sms-gallery-card--mosaic {
+  grid-column: span 1;
+  min-height: 0 !important;
+  aspect-ratio: 1;
+}
+.sms-gallery-card--plain::after {
+  display: none !important;
+}
+.sms-gallery-card--plain {
+  align-items: stretch;
+  min-height: 0 !important;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+}
+@media (max-width: 991px) {
+  .sms-gallery-grid--mosaic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .sms-gallery-grid--mosaic {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Course detail: intro band under image hero */
+.sms-course-hero-inline__lead {
+  max-width: 48rem;
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #4a4a4a;
+}
+.sms-course-hero-inline__lead strong {
+  font-weight: 600;
+  color: #0d0d0d;
+}
