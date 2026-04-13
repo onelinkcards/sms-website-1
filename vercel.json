@@ -3,7 +3,25 @@
   "functions": {
     "api/router.php": {
       "runtime": "vercel-php@0.9.0",
-      "excludeFiles": "{assets/**,photo/**,reference/**}"
+      "excludeFiles": [
+        "assets/**",
+        "photo/**",
+        "reference/**",
+        "**/*.png",
+        "**/*.jpg",
+        "**/*.jpeg",
+        "**/*.webp",
+        "**/*.gif",
+        "**/*.svg",
+        "**/*.mp4",
+        "**/*.pdf",
+        "**/*.woff",
+        "**/*.woff2",
+        "**/*.ttf",
+        "**/*.eot",
+        "**/*.scss",
+        "**/*.map"
+      ]
     }
   },
   "routes": [
