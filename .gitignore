@@ -24,3 +24,7 @@ assets/video/DJI_0323.MP4
 assets/video/DJI_0337.MP4
 assets/video/DJI_0344.MP4
 photo/SMS_VIDEO_WITHAUDIO_F1.mp4
+
+# This repo serves media from remote CDN/source repos for Vercel size limits.
+assets/
+photo/

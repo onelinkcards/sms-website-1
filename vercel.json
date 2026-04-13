@@ -7,7 +7,7 @@
     }
   },
   "routes": [
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/assets/(.*)", "dest": "https://cdn.jsdelivr.net/gh/onelinkcards/sms-websites@main/assets/$1" },
     { "src": "/", "dest": "/api/router.php" },
     { "src": "/[^/]+\\.php", "dest": "/api/router.php" },
     { "handle": "filesystem" }
