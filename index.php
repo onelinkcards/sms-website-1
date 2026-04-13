@@ -75,7 +75,7 @@ $_sms_hero_video_poster = defined('SMS_STOCK_HERO_1') ? SMS_STOCK_HERO_1 : '';
 <section class="sms-hero-cu" id="enquiry">
     <div class="sms-hero-cu__bg sms-hero-cu__bg--hero-photo sms-hero-cu__bg--video" data-sms-hero-root>
         <?php if ($_sms_enable_hero_video) : ?>
-        <video class="sms-hero-cu__video" autoplay muted playsinline loop preload="metadata" aria-hidden="true"<?php echo $_sms_hero_video_poster !== '' ? ' poster="' . htmlspecialchars($_sms_hero_video_poster, ENT_QUOTES, 'UTF-8') . '"' : ''; ?><?php echo trim($_sms_hero_video_sequence) !== '' ? ' data-sms-video-sequence="' . htmlspecialchars($_sms_hero_video_sequence, ENT_QUOTES, 'UTF-8') . '"' : ''; ?>>
+        <video class="sms-hero-cu__video" autoplay muted playsinline loop preload="none" aria-hidden="true"<?php echo $_sms_hero_video_poster !== '' ? ' poster="' . htmlspecialchars($_sms_hero_video_poster, ENT_QUOTES, 'UTF-8') . '"' : ''; ?><?php echo trim($_sms_hero_video_sequence) !== '' ? ' data-sms-video-sequence="' . htmlspecialchars($_sms_hero_video_sequence, ENT_QUOTES, 'UTF-8') . '"' : ''; ?>>
             <source src="<?php echo htmlspecialchars($_sms_hero_video_primary, ENT_QUOTES, 'UTF-8'); ?>" type="video/mp4">
         </video>
         <?php endif; ?>

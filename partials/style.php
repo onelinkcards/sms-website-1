@@ -1,6 +1,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <title><?php echo defined('SMS_SITE_NAME') ? SMS_SITE_NAME . ' - ' : ''; ?><?php echo htmlspecialchars($page_title ?? 'SMS Final Design'); ?></title>

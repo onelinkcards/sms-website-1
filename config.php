@@ -75,7 +75,7 @@ if (!defined('SMS_TRIBUTE_BG_IMAGE')) {
  * Use direct media URLs so deployment does not depend on Git LFS checkout.
  */
 if (!defined('SMS_HERO_VIDEO_PRIMARY')) {
-    define('SMS_HERO_VIDEO_PRIMARY', 'https://cdn.jsdelivr.net/gh/onelinkcards/sms-websites@main/assets/video/DJI_0337.MP4');
+    define('SMS_HERO_VIDEO_PRIMARY', 'https://cdn.jsdelivr.net/gh/onelinkcards/sms-website-1@main/media/hero-lite.mp4');
 }
 if (!defined('SMS_HERO_VIDEO_SEQUENCE')) {
     define('SMS_HERO_VIDEO_SEQUENCE', '');
@@ -167,7 +167,7 @@ function sms_gallery_mosaic_files(): array
  * Replace with your own campus shots anytime; keep width=2400 or 1600 for sharp displays.
  */
 if (!defined('SMS_STOCK_HERO_1')) {
-    define('SMS_STOCK_HERO_1', 'assets/images/hero/q1.png');
+    define('SMS_STOCK_HERO_1', 'https://images.unsplash.com/photo-1498243691581-b145c3f54a78?auto=format&fit=crop&w=1600&q=72');
 }
 if (!defined('SMS_STOCK_HERO_2')) {
     define('SMS_STOCK_HERO_2', 'https://images.unsplash.com/photo-1498243691581-b145c3f54a78?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=90');
