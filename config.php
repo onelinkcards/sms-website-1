@@ -189,16 +189,16 @@ if (!defined('SMS_PAGE_HERO_CONTACT')) {
     define('SMS_PAGE_HERO_CONTACT', sms_photo_path('image copy 4.png'));
 }
 if (!defined('SMS_PAGE_HERO_COURSES')) {
-    define('SMS_PAGE_HERO_COURSES', 'assets/images/course/program-big.jpg');
+    define('SMS_PAGE_HERO_COURSES', 'media/hero-courses.jpg');
 }
 if (!defined('SMS_PAGE_HERO_ADMISSION')) {
-    define('SMS_PAGE_HERO_ADMISSION', 'assets/images/course/admission-bg.jpg');
+    define('SMS_PAGE_HERO_ADMISSION', 'media/hero-admission.jpg');
 }
 if (!defined('SMS_PAGE_HERO_ABOUT')) {
     define('SMS_PAGE_HERO_ABOUT', sms_photo_path('image copy 4.png'));
 }
 if (!defined('SMS_PAGE_HERO_GALLERY')) {
-    define('SMS_PAGE_HERO_GALLERY', 'assets/images/campus/gallery/03.jpg');
+    define('SMS_PAGE_HERO_GALLERY', 'media/hero-gallery.jpg');
 }
 if (!defined('SMS_STOCK_COURSE_BSC')) {
     define(
