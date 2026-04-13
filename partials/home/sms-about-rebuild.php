@@ -58,7 +58,7 @@ $_ar_img = defined('SMS_STOCK_ABOUT_COLUMN') && SMS_STOCK_ABOUT_COLUMN !== ''
 
             <div class="sms-about-rebuild__media fade-up">
                 <div class="sms-about-rebuild__figure">
-                    <img class="sms-about-rebuild__photo sms-about-rebuild__photo--campus" src="assets/images/about/rvrgv.png" alt="Campus and college building at <?php echo htmlspecialchars($_ar_short); ?>" width="1600" height="1000" loading="lazy" decoding="async" sizes="(max-width: 767px) 100vw, 50vw">
+                    <img class="sms-about-rebuild__photo sms-about-rebuild__photo--campus" src="assets/images/hero/q1.png" alt="Campus and college building at <?php echo htmlspecialchars($_ar_short); ?>" width="1600" height="1000" loading="lazy" decoding="async" sizes="(max-width: 767px) 100vw, 50vw">
                     <div class="sms-about-rebuild__float-card" aria-hidden="true">
                         <span class="sms-about-rebuild__float-ico">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12 3 2.582 9.084a1 1 0 0 0 0 1.832l9.538 5.9a1 1 0 0 0 1.162 0l9.538-5.9a1 1 0 0 0-.019-1.838Z"/><path d="M22 10v6"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
