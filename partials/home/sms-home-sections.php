@@ -138,18 +138,13 @@ $_hs_campus_poster = function_exists('sms_photo_path') ? sms_photo_path('IMG_042
         <div class="sms-hs-campus-film__wrap fade-up" data-sms-campus-film>
             <div class="sms-hs-campus-film__frame">
                 <div class="sms-hs-campus-film__ratio">
-                    <video
+                    <img
                         class="sms-hs-campus-film__video sms-hs-campus-film__video--preview"
-                        data-sms-campus-preview-video
-                        muted
-                        loop
-                        playsinline
-                        autoplay
-                        preload="metadata"
-                        poster="<?php echo htmlspecialchars($_hs_campus_poster, ENT_QUOTES, 'UTF-8'); ?>"
+                        src="<?php echo htmlspecialchars($_hs_campus_poster, ENT_QUOTES, 'UTF-8'); ?>"
+                        alt="SMS College campus aerial preview"
+                        loading="lazy"
+                        decoding="async"
                     >
-                        <source src="<?php echo htmlspecialchars($_hs_campus_mp4, ENT_QUOTES, 'UTF-8'); ?>" type="video/mp4">
-                    </video>
                     <button type="button" class="sms-hs-campus-film__play" data-sms-campus-film-open aria-label="Play campus video with sound and controls">
                         <span class="sms-hs-campus-film__play-inner">
                             <svg class="sms-hs-campus-film__play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 7.5v9l7.5-4.5L9 7.5z"/></svg>

@@ -60,7 +60,7 @@ if (!defined('SMS_SHOW_DEMO_BANNER')) {
  * Set false to skip (e.g. local dev). Portrait: copy to this path or override define.
  */
 if (!defined('SMS_TRIBUTE_SPLASH')) {
-    define('SMS_TRIBUTE_SPLASH', true);
+    define('SMS_TRIBUTE_SPLASH', false);
 }
 if (!defined('SMS_TRIBUTE_PORTRAIT')) {
     define('SMS_TRIBUTE_PORTRAIT', 'assets/images/tribute/sant-manjit-singh-ji.png');
@@ -75,19 +75,16 @@ if (!defined('SMS_TRIBUTE_BG_IMAGE')) {
  * Use direct media URLs so deployment does not depend on Git LFS checkout.
  */
 if (!defined('SMS_HERO_VIDEO_PRIMARY')) {
-    define('SMS_HERO_VIDEO_PRIMARY', 'https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/assets/video/DJI_0323.MP4');
+    define('SMS_HERO_VIDEO_PRIMARY', '');
 }
 if (!defined('SMS_HERO_VIDEO_SEQUENCE')) {
-    define('SMS_HERO_VIDEO_SEQUENCE', implode(',', [
-        'https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/assets/video/DJI_0337.MP4',
-        'https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/assets/video/DJI_0344.MP4',
-    ]));
+    define('SMS_HERO_VIDEO_SEQUENCE', '');
 }
 if (!defined('SMS_CAMPUS_VIDEO_MP4')) {
-    define('SMS_CAMPUS_VIDEO_MP4', 'https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/photo/SMS_VIDEO_WITHAUDIO_F1.mp4');
+    define('SMS_CAMPUS_VIDEO_MP4', 'https://cdn.jsdelivr.net/gh/onelinkcards/sms-websites@main/photo/SMS_VIDEO_WITHAUDIO_F1.mp4');
 }
 if (!defined('SMS_PHOTO_BASE_URL')) {
-    define('SMS_PHOTO_BASE_URL', 'https://media.githubusercontent.com/media/onelinkcards/sms-websites/main/photo/');
+    define('SMS_PHOTO_BASE_URL', 'https://cdn.jsdelivr.net/gh/onelinkcards/sms-websites@main/photo/');
 }
 
 /** Enquiry form: notification inbox — defaults to college email when defined */
